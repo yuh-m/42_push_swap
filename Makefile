@@ -6,7 +6,7 @@
 #    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2022/12/17 18:04:38 by eryudi-m         ###   ########.fr        #
+#    Updated: 2022/12/17 22:08:33 by eryudi-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,8 @@ PATH_LIBFT =./libft/
 
 #FILES
 APP_FILE = ./app/app.c
-SRC_FILES =
-			#test_pipe.c \
-			#pipex.c \
-			#test_exec.c \
-			#test_signal_communicate_process.c \
-			#test_signals.c \
+SRC_FILES = test_list.c \
+
 
 SOURCES = $(addprefix $(PATH_SRC), $(SRC_FILES))
 OBJ_FILES = $(patsubst %.c, %.o, $(SRC_FILES))
@@ -75,7 +71,7 @@ fclean: clean
 
 #Tests
 test: all
-	$(PATH_BIN)$(NAME)
+	$(PATH_BIN)$(NAME) 4 2 1 3
 
 leak:
 	$(VALGRIND) -s $(PATH_BIN)$(NAME)
