@@ -6,7 +6,7 @@
 #    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2022/12/17 22:08:33 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/01/15 19:52:11 by eryudi-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ PATH_LIBFT =./libft/
 
 #FILES
 APP_FILE = ./app/app.c
-SRC_FILES = test_list.c \
+SRC_FILES = test_double_list.c \
 
 
 SOURCES = $(addprefix $(PATH_SRC), $(SRC_FILES))
@@ -68,6 +68,7 @@ clean:
 fclean: clean
 	@cd $(PATH_LIBFT) && $(MAKE) fclean
 	@$(RM) $(PATH_BIN)$(NAME)
+
 
 #Tests
 test: all
