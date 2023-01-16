@@ -1,3 +1,9 @@
+
+
+
+
+
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -19,6 +25,13 @@
 
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
+
+typedef struct s_node {
+	int value;
+	int index;
+	struct s_node* next;
+	struct s_node* prev;
+} t_node;
 
 int push_swap(int argc, char **argv);
 
