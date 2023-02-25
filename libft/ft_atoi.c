@@ -6,17 +6,17 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 19:56:39 by eryudi-m          #+#    #+#             */
-/*   Updated: 2022/05/08 20:48:06 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:21:04 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long long ft_atoi(const char *nptr)
 {
 	int	cnt;
 	int	minus_sign;
-	int	res;
+	long long	res;
 
 	cnt = 0;
 	minus_sign = 1;

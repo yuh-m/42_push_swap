@@ -2,8 +2,8 @@
 
 ## Key learnings
  - Sorting algorithm 
- - Linked lists
-
+ - Linked lists data structure
+ 
 ## About
  - Objective sort a list of integers in stack A, with the smallest number being on top. While aiming to complete with a minimum number of moves, and following a set of movement rules
    - Starting

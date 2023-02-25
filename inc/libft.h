@@ -6,7 +6,7 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:57:49 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/01/15 19:16:53 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:23:47 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,12 +216,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char	*dest, const char *src, size_t len);
 
 /**
-* @brief converts the string argument str to an integer (type int).
+* @brief converts the string argument str to an integer (type long long).
 * @param nptr − This is the string representation of an integral number.
 * @return This function returns the converted integral number as an int
-* value. If no valid conversion could be performed, it returns zero.
+* value.
 */
-int		ft_atoi(const char *nptr);
+long long	ft_atoi(const char *nptr);
 
 /**
 * @brief allocates the requested memory and returns a pointer to it.

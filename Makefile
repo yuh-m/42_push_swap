@@ -6,7 +6,7 @@
 #    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/01/16 03:21:56 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/02/25 00:50:33 by eryudi-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ PATH_LIBFT =./libft/
 
 #FILES
 APP_FILE = ./app/app.c
-SRC_FILES = test_linked_list.c \
+SRC_FILES = push_swap.c \
+			validate_input.c \
+			
 
 
 SOURCES = $(addprefix $(PATH_SRC), $(SRC_FILES))

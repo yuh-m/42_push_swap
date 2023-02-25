@@ -1,34 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   Testtest_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 21:52:28 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/25 15:45:44 by eryudi-m         ###   ########.fr       */
+/*   Created: 2023/02/21 14:26:32 by eryudi-m          #+#    #+#             */
+/*   Updated: 2023/02/21 21:13:09 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "unity.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "libft.h"
-
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
-typedef struct s_node {
-	int value;
-	int index;
-	struct s_node* next;
-	struct s_node* prev;
-} t_node;
-
-int push_swap(int argc, char **argv);
-int validate_input(int argc,char **argv);
-
-
-#endif
