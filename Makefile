@@ -6,7 +6,7 @@
 #    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/02/25 00:50:33 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/02/27 01:37:09 by eryudi-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ PATH_LIBFT =./libft/
 #FILES
 APP_FILE = ./app/app.c
 SRC_FILES = push_swap.c \
-			validate_input.c \
+			input_handler.c \
 			
 
 
@@ -77,7 +77,7 @@ test: all
 	$(PATH_BIN)$(NAME) 4 2 1 3
 
 leak:
-	$(VALGRIND) -s $(PATH_BIN)$(NAME)
+	$(VALGRIND) -s $(PATH_BIN)$(NAME) 4 2
 
 re: fclean all
 

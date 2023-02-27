@@ -6,11 +6,12 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 19:56:39 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/25 20:21:04 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:35:44 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 long long ft_atoi(const char *nptr)
 {

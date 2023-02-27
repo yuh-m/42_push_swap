@@ -6,12 +6,26 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:12:44 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/25 20:21:27 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/02/27 01:53:27 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
+void deallocate_stack(t_node **stack)
+{
+	t_node *temp;
+
+	while (*stack)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
+	*stack = NULL;
+}
+
+//initialize a new node
 t_node *ft_init_node(int content)
 {
 	t_node *new;
@@ -21,18 +35,37 @@ t_node *ft_init_node(int content)
 		exit (1);
 	new->value = content;
 	new->next = NULL;
+	new->prev = NULL;
 	return (new);
 }
 
-int ft_lstadd_start(t_node **lst, t_node *new)
+//Add a new node after the given node
+int ft_lstadd_after(t_node *lst, t_node *new)
 {
 	if (!lst || !new)
 		return (0);
+	new->next = lst->next;
+	new->prev = lst;
+	if (lst->next)
+		lst->next->prev = new;
+	lst->next = new;
+	return (1);
+}
+
+//Add a new node at the beginning of the list
+int ft_lstadd_start(t_node **lst, t_node *new)
+{
+	if (!lst || !new)
+		exit (1);
 	new->next = *lst;
+	new->prev = NULL;
+	if (*lst)
+		(*lst)->prev = new;
 	*lst = new;
 	return (1);
 }
 
+//Add a new node at the end of the list
 int ft_lstadd_end(t_node **lst, t_node *new)
 {
 	t_node *temp;
@@ -51,22 +84,6 @@ int ft_lstadd_end(t_node **lst, t_node *new)
 	return (1);
 }
 
-//add elements of argv to stack_a
-void argv_to_stack(int argc, char **argv, t_node **stack_a)
-{
-	int i;
-	int num;
-
-	i = 1;
-	while (i < argc)
-	{
-		num = ft_atoi(argv[i]);
-		if (num > INT_MAX || num < INT_MIN)
-			exit (1);
-		ft_lstadd_end(stack_a, ft_init_node(num));
-		i++;
-	}
-}
 
 int push_swap(int argc, char **argv)
 {
@@ -80,6 +97,7 @@ int push_swap(int argc, char **argv)
 
 	//stack_a = NULL; 
 	stack_b = NULL;
+	deallocate_stack(&stack_a);
 
 	return (0);
 }
