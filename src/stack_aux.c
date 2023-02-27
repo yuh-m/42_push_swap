@@ -1,39 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_swap.c                                   :+:      :+:    :+:   */
+/*   stack_aux.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 03:09:35 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/27 03:26:03 by eryudi-m         ###   ########.fr       */
+/*   Created: 2023/02/27 02:59:46 by eryudi-m          #+#    #+#             */
+/*   Updated: 2023/02/27 03:29:26 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-//swap the first 2 elements at the top of stack. Do nothing if there is only one or no elements).
-void	swap(t_node **stack)
+t_node	*get_stack_end(t_node *stack)
 {
-	t_node *temp;
+	t_node	*temp;
 
-	if (*stack && (*stack)->next)
-	{
-		temp = (*stack)->next;
-		(*stack)->next = temp->next;
-		temp->next = *stack;
-		*stack = temp;
-	}
+	temp = stack;
+	while (temp->next)
+		temp = temp->next;
+	return (temp);
 }
 
-//remove the first element of a doubly linked list and return it
-t_node	*pop_top(t_node **stack)
+//initialize a new node
+t_node	*ft_init_node(int content)
 {
-	t_node *temp;
+	t_node	*new;
 
-	temp = *stack;
-	if (*stack)
+	new = malloc(sizeof(t_node));
+	if (!new)
+		exit (1);
+	new->value = content;
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
+}
+
+void	deallocate_stack(t_node **stack)
+{
+	t_node	*temp;
+
+	while (*stack)
+	{
+		temp = *stack;
 		*stack = (*stack)->next;
-		(*stack)->prev = NULL;
-	return (temp);
+		free(temp);
+	}
+	*stack = NULL;
 }
