@@ -6,7 +6,7 @@
 #    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 03:39:22 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/02/23 09:22:35 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/03/01 12:12:50 by eryudi-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@
 
 CLEANUP = rm -f
 MKDIR = mkdir -p
-TARGET_EXTENSION=out
 
 PATHU1 = unity/
 PATHU = unity/src/
@@ -30,83 +29,19 @@ PATHD = build/depends/
 PATHO = build/objs/
 PATHR = build/results/
 
-BUILD_PATHS = $(PATHB) $(PATHD) $(PATHO) $(PATHR)
+#Files
 
-SRCT = test_list.c \
+#Source files
+SRCT = $(wildcard $(PATHT)*.c)
+OBJ = $(wildcard $(PATHS)*.o)
 
-SRC = push_swap.c \
+COMPILE=gcc -c
+LINK=gcc
+DEPEND=gcc -MM -MG -MF
+CFLAGS=-I. -I$(PATHU) -I$(PATHS) -I$(PATHI) -DTEST
 
-
-COMPILE=clang -c
-LINK=clang
-DEPEND=clang -MM -MG -MF
-CFLAGS=-I. -I$(PATHU) -I$(PATHI) -DTEST
-
-RESULTS = $(patsubst $(PATHT)Test%.c,$(PATHR)Test%.txt,$(SRCT) )
-
-PASSED = `grep -s PASS $(PATHR)*.txt`
-FAIL = `grep -s FAIL $(PATHR)*.txt`
-IGNORE = `grep -s IGNORE $(PATHR)*.txt`
-
-test: $(BUILD_PATHS) $(RESULTS) 
-#@echo "$(SRCT)"
-#@echo "$(RESULTS)"
-	@echo "-----------------------\nIGNORES:\n-----------------------"
-	@echo "$(IGNORE)"
-	@echo "-----------------------\nFAILURES:\n-----------------------"
-	@echo "$(FAIL)"
-	@echo "-----------------------\nPASSED:\n-----------------------"
-	@echo "$(PASSED)"
-	@echo "\nDONE"
-
-
-
-$(PATHR)%.txt: $(PATHB)%.$(TARGET_EXTENSION)
-	-./$< > $@ 2>&1
-
-$(PATHB)Test%.$(TARGET_EXTENSION): $(PATHO)Test%.o $(PATHO)%.o $(PATHO)unity.o #$(PATHD)Test%.d
-	$(LINK) -o $@ $^
-
-$(PATHO)%.o:: $(PATHT)%.c
-	$(COMPILE) $(CFLAGS) $< -o $@
-
-$(PATHO)%.o:: $(PATHS)%.c
-	$(COMPILE) $(CFLAGS) $< -o $@
-
-$(PATHO)%.o:: $(PATHU)%.c $(PATHU)%.h 
-	$(COMPILE) $(CFLAGS) $< -o $@
-
-$(PATHD)%.d:: $(PATHT)%.c
-	$(DEPEND) $@ $<
-
-$(PATHB):
-	$(MKDIR) $(PATHB)
-
-$(PATHD):
-	$(MKDIR) $(PATHD)
-
-$(PATHO):
-	$(MKDIR) $(PATHO)
-
-$(PATHR):
-	$(MKDIR) $(PATHR)
-
-
-clean:
-	$(CLEANUP) $(PATHO)*.o
-	$(CLEANUP) $(PATHB)*.$(TARGET_EXTENSION)
-	$(CLEANUP) $(PATHR)*.txt
-#$(CLEANUP) -r $(PATHU1)
-	
-	
-
-build_test:
-	git clone https://github.com/ThrowTheSwitch/Unity.git unity
-
-.PRECIOUS: $(PATHB)Test%.$(TARGET_EXTENSION)
-.PRECIOUS: $(PATHD)%.d
-.PRECIOUS: $(PATHO)%.o
-.PRECIOUS: $(PATHR)%.txt
+test:
+	clang -g -Wall -Wextra -Werror ../obj/push_swap.o ../obj/input_handler.o ../obj/stack_add.o ../obj/stack_aux.o ../obj/stack_remove.o ../obj/operation_swap.o test_operation_swap.c ./unity/src/unity.c ../libft/push_swap -I../inc/ -I./unity/src/ -o ./test.out
 
 .PHONY: clean
 .PHONY: test

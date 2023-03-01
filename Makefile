@@ -6,7 +6,7 @@
 #    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/02/27 03:03:09 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/02/28 07:40:33 by eryudi-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,11 @@ PATH_LIBFT =./libft/
 APP_FILE = ./app/app.c
 SRC_FILES = push_swap.c \
 			input_handler.c \
-			stack_handler.c \
-			stack_aux.c
+			stack_add.c \
+			stack_aux.c \
+			stack_remove.c \
+			operation_swap.c \
+			
 			
 
 
@@ -76,7 +79,7 @@ fclean: clean
 
 #Tests
 test: all
-	$(PATH_BIN)$(NAME) 4 2 1 3
+	$(PATH_BIN)$(NAME) 4 2
 
 leak:
 	$(VALGRIND) -s $(PATH_BIN)$(NAME) 4 2

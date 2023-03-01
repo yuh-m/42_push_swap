@@ -6,34 +6,39 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 03:09:35 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/27 03:26:03 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/02/28 07:48:06 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
 //swap the first 2 elements at the top of stack. Do nothing if there is only one or no elements).
-void	swap(t_node **stack)
+static void	swap(t_node **stack)
 {
-	t_node *temp;
+	t_node	*temp;
 
-	if (*stack && (*stack)->next)
+	if ((*stack) || (*stack)->next)
 	{
-		temp = (*stack)->next;
-		(*stack)->next = temp->next;
-		temp->next = *stack;
-		*stack = temp;
+		temp = ft_lstremove_after((*stack));
+		ft_lstadd_start(stack, temp);
 	}
 }
 
-//remove the first element of a doubly linked list and return it
-t_node	*pop_top(t_node **stack)
+void	swap_a(t_node **stack_a)
 {
-	t_node *temp;
+	swap(stack_a);
+	ft_printf("sa \n");
+}
 
-	temp = *stack;
-	if (*stack)
-		*stack = (*stack)->next;
-		(*stack)->prev = NULL;
-	return (temp);
+void	swap_b(t_node **stack_b)
+{
+	swap(stack_b);
+	ft_printf("sb \n");
+}
+
+void	swap_ss(t_node **stack_a, t_node **stack_b)
+{	
+	swap(stack_a);
+	swap(stack_b);
+	ft_printf("ss \n");
 }
