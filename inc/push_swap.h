@@ -6,7 +6,7 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 21:52:28 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/28 07:36:36 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/02 04:51:05 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_node {
 } t_node;
 
 int push_swap(int argc, char **argv);
+int print_elements(t_node *stack);
 
 int validate_input(int argc,char **argv);
 void argv_to_stack(int argc, char **argv, t_node **stack_a);
