@@ -6,7 +6,7 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 21:52:28 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/02 04:51:05 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/02 06:34:32 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,16 @@ void deallocate_stack(t_node **stack);
 void	swap_ss(t_node **stack_a, t_node **stack_b);
 void	swap_b(t_node **stack_b);
 void	swap_a(t_node **stack_a);
+void	rotate_rr(t_node **stack_a, t_node **stack_b);
+void	rotate_b(t_node **stack_b);
+void	rotate_a(t_node **stack_a);
+void	reverse_rotate_rrr(t_node **stack_a, t_node **stack_b);
+void	reverse_rotate_b(t_node **stack_b);
+void	reverse_rotate_a(t_node **stack_a);
+void	push_a(t_node **stack_a, t_node **stack_b);
+void	push_b(t_node **stack_a, t_node **stack_b);
 
+void	sort(t_node **stack_a, t_node **stack_b, int size);
 
 
 #endif

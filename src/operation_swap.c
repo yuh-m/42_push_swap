@@ -6,13 +6,12 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 03:09:35 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/28 07:48:06 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/02 06:01:45 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-//swap the first 2 elements at the top of stack. Do nothing if there is only one or no elements).
 static void	swap(t_node **stack)
 {
 	t_node	*temp;

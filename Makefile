@@ -6,7 +6,7 @@
 #    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/02/28 07:40:33 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/03/02 06:32:38 by eryudi-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,10 @@ SRC_FILES = push_swap.c \
 			stack_aux.c \
 			stack_remove.c \
 			operation_swap.c \
+			operation_rotate.c \
+			operation_reverse_rotate.c \
+			operation_push.c \
+			sort.c
 			
 			
 

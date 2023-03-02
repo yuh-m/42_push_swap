@@ -6,7 +6,7 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:12:44 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/01 02:51:34 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/02 06:37:32 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int push_swap(int argc, char **argv)
 	//stack_a = NULL; 
 	stack_b = NULL;
 	print_elements(stack_a);
-	swap_a(&stack_a);
+	sort(&stack_a, &stack_b, argc);
 	print_elements(stack_a);
 	
 	//stack_b = get_stack_end(stack_a);
@@ -50,7 +50,7 @@ int push_swap(int argc, char **argv)
 	//ft_printf("stack_b: %d \n", stack_b->value);
 	//print_elements(stack_b);
 	deallocate_stack(&stack_a);
-	//deallocate_stack(&stack_b);
+	deallocate_stack(&stack_b);
 
 	return (0);
 }
