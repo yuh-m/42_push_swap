@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:56:46 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/12 19:03:34 by codespace        ###   ########.fr       */
+/*   Updated: 2023/03/13 16:57:01 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int ft_lstadd_end(t_node **lst, t_node *new)
 	temp = *lst;
 	while (temp->next)
 		temp = temp->next;
+	new->prev = temp;
 	temp->next = new;
 	return (1);
 }

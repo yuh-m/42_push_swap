@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_aux.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:59:46 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/27 03:29:26 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/13 17:43:44 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_node	*ft_init_node(int content)
 	if (!new)
 		exit (1);
 	new->value = content;
+	new->index = 0;
 	new->next = NULL;
 	new->prev = NULL;
 	return (new);

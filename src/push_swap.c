@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 20:12:44 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/13 04:45:26 by codespace        ###   ########.fr       */
+/*   Updated: 2023/03/13 23:17:28 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,18 @@ int push_swap(int argc, char **argv)
 
 	validate_input(argc, argv);
 	stack_a = NULL;
-	argv_to_stack(argc, argv, &stack_a);
-
 	stack_b = NULL;
-	print_elements(stack_a);
+	argv_to_stack(argc, argv, &stack_a);
 	assign_index(&stack_a, argc - 1);
+
+	ft_printf("sorting \n");
+	//rotate_a(&stack_a);
+	if (argc - 1 == 2 && !stack_is_sorted(stack_a))
+		rotate_a(&stack_a);
+	else if (argc - 1 == 3)
+		sort_three(&stack_a);
+	else  if()
 	//sort(&stack_a, &stack_b, argc - 1);
-	print_elements(stack_a);
 	//print_elements(stack_b);
 	//stack_b = get_stack_end(stack_a);
 	//print_elements(stack_b);

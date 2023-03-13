@@ -7,7 +7,8 @@
 	"settings": {
 		"files.associations": {
 			"unity_internals.h": "c",
-			"unity.h": "c"
+			"unity.h": "c",
+			"push_swap.h": "c"
 		}
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 21:52:28 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/02 06:34:32 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:12:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,26 @@ typedef struct s_node {
 	struct s_node* prev;
 } t_node;
 
+//push_swap.c
 int push_swap(int argc, char **argv);
 int print_elements(t_node *stack);
 
+//input.c
 int validate_input(int argc,char **argv);
 void argv_to_stack(int argc, char **argv, t_node **stack_a);
 
+//stack_*.c
 int ft_lstadd_end(t_node **lst, t_node *new);
 int ft_lstadd_start(t_node **lst, t_node *new);
 int ft_lstadd_after(t_node *lst, t_node *new);
-
 t_node	*ft_lstremove_start(t_node **stack);
 t_node *ft_lstremove_after(t_node *lst);
 t_node *ft_lstremove_end(t_node **lst);
-
 t_node *ft_init_node(int content);
 t_node *get_stack_end(t_node *stack);
 void deallocate_stack(t_node **stack);
 
+//operation_*.c
 void	swap_ss(t_node **stack_a, t_node **stack_b);
 void	swap_b(t_node **stack_b);
 void	swap_a(t_node **stack_a);
@@ -57,7 +59,12 @@ void	reverse_rotate_a(t_node **stack_a);
 void	push_a(t_node **stack_a, t_node **stack_b);
 void	push_b(t_node **stack_a, t_node **stack_b);
 
+//sort.c
 void	sort(t_node **stack_a, t_node **stack_b, int size);
+void	sort_three(t_node **stack_a);
+int		stack_is_sorted(t_node *stack);
+//
+//void	assign_index(t_node **stack_a, int size);
 
 
 #endif

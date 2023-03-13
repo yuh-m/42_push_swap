@@ -6,7 +6,7 @@
 #    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/03/12 23:20:19 by codespace        ###   ########.fr        #
+#    Updated: 2023/03/13 23:16:38 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,10 +83,11 @@ fclean: clean
 
 #Tests
 test: all
-	$(PATH_BIN)$(NAME) 2 12 43 -214
+	$(PATH_BIN)$(NAME) 1 2 3
+#	$(PATH_BIN)$(NAME) 41 2 23
 
 leak:
-	$(VALGRIND) -s $(PATH_BIN)$(NAME) 4 2
+	$(VALGRIND) -s $(PATH_BIN)$(NAME) 0
 
 re: fclean all
 
