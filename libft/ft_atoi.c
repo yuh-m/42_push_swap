@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 19:56:39 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/02/25 20:35:44 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/12 19:42:25 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 
-long long ft_atoi(const char *nptr)
+long int ft_atoi(const char *nptr)
 {
 	int	cnt;
 	int	minus_sign;
-	long long	res;
+	long int	res;
 
 	cnt = 0;
 	minus_sign = 1;

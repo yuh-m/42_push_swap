@@ -6,11 +6,36 @@
 /*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 06:04:08 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/02 06:07:37 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/05 20:44:03 by eryudi-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+//index of the smallest element in the stack
+int		get_min_index(t_node *stack)
+{
+	int		i;
+	int		min;
+	t_node	*temp;
+
+	i = 0;
+	temp = stack;
+	min = 0;
+	while (temp)
+	{
+		if (temp->index <= min)
+		{
+			min = temp->index;
+			i = 0;
+		}
+		temp = temp->next;
+		i++;
+	}
+	return (i);
+}
+
+
 
 //sorts the stack in ascending order
 void	sort(t_node **stack_a, t_node **stack_b, int size)
@@ -58,3 +83,6 @@ void	sort(t_node **stack_a, t_node **stack_b, int size)
 		i++;
 	}
 }
+
+//pushes the smallest element to the top of the stack
+

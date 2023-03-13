@@ -1,3 +1,4 @@
 *.o
 bin/*
 tests/unity/
+study/*

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/10 20:25:34 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/03/02 06:32:38 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/03/12 23:20:19 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ SRC_FILES = push_swap.c \
 			operation_reverse_rotate.c \
 			operation_push.c \
 			sort.c
-			
-			
+
+
 
 
 SOURCES = $(addprefix $(PATH_SRC), $(SRC_FILES))
@@ -83,7 +83,7 @@ fclean: clean
 
 #Tests
 test: all
-	$(PATH_BIN)$(NAME) 4 2
+	$(PATH_BIN)$(NAME) 2 12 43 -214
 
 leak:
 	$(VALGRIND) -s $(PATH_BIN)$(NAME) 4 2
