@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 02:56:46 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/13 16:57:01 by codespace        ###   ########.fr       */
+/*   Updated: 2023/03/19 01:40:40 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,17 @@ int ft_lstadd_start(t_node **lst, t_node *new)
 {
 	if (!lst || !new)
 		exit (1);
-	new->next = *lst;
 	new->prev = NULL;
 	if (*lst)
+	{
 		(*lst)->prev = new;
-	*lst = new;
+		new->next = *lst;
+		*lst = new;
+	}
+	else{
+		*lst = new;
+	}
+
 	return (1);
 }
 

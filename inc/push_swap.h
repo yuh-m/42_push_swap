@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 21:52:28 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/13 23:12:05 by codespace        ###   ########.fr       */
+/*   Updated: 2023/03/14 00:09:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	push_a(t_node **stack_a, t_node **stack_b);
 void	push_b(t_node **stack_a, t_node **stack_b);
 
 //sort.c
-void	sort(t_node **stack_a, t_node **stack_b, int size);
+void	sort(t_node **stack_a, t_node **stack_b);
 void	sort_three(t_node **stack_a);
 int		stack_is_sorted(t_node *stack);
 //

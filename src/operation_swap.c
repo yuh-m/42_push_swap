@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 03:09:35 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/02 06:01:45 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/19 01:40:53 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	swap_b(t_node **stack_b)
 }
 
 void	swap_ss(t_node **stack_a, t_node **stack_b)
-{	
+{
 	swap(stack_a);
 	swap(stack_b);
 	ft_printf("ss \n");

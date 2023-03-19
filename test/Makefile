@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 03:39:22 by eryudi-m          #+#    #+#              #
-#    Updated: 2023/03/02 05:52:08 by eryudi-m         ###   ########.fr        #
+#    Updated: 2023/03/19 01:10:16 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,26 +23,29 @@ PATHU = unity/src/
 PATHS = ../src/
 PATHI = ../inc/
 PATHA = ../app/
-PATHT = ../test/
 PATHB = build/
 PATHD = build/depends/
-PATHO = build/objs/
 PATHR = build/results/
+
+PATHO = ../obj/
+PATHT = ./
 
 #Files
 
 #Source files
 SRCT = $(wildcard $(PATHT)*.c)
-OBJ = $(wildcard $(PATHS)*.o)
+OBJ = $(wildcard $(PATHO)*.o)
 
-COMPILE=gcc -c
-LINK=gcc
-DEPEND=gcc -MM -MG -MF
-CFLAGS=-I. -I$(PATHU) -I$(PATHS) -I$(PATHI) -DTEST
+COMPILE=clang -g -Wall -Wextra -Werror
+HEADERS = ./unity/src/unity.c ../libft/push_swap -I./unity/src/ -I../inc/
+TESTS = ./*.c
+
+#$(COMPILE) ../obj/push_swap.o ../obj/input_handler.o ../obj/stack_add.o ../obj/stack_aux.o ../obj/stack_remove.o ../obj/operation_swap.o test_operation_swap.c test.c ./unity/src/unity.c ../libft/push_swap -I../inc/ -I./unity/src/ -o ./test.out
 
 test:
-	clang -g -Wall -Wextra -Werror ../obj/push_swap.o ../obj/input_handler.o ../obj/stack_add.o ../obj/stack_aux.o ../obj/stack_remove.o ../obj/operation_swap.o test_operation_swap.c test.c ./unity/src/unity.c ../libft/push_swap -I../inc/ -I./unity/src/ -o ./test.out
+	cd .. && make
+	$(COMPILE) $(OBJ) $(SRCT) $(HEADERS) -o ./test.out
+
 
 .PHONY: clean
 .PHONY: test
-	

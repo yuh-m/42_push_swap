@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eryudi-m <eryudi-m@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 06:00:15 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/02 06:01:45 by eryudi-m         ###   ########.fr       */
+/*   Updated: 2023/03/15 20:19:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	push(t_node **stack_a, t_node **stack_b)
 
 	if ((*stack_b))
 	{
+
 		temp = ft_lstremove_start(stack_b);
 		ft_lstadd_start(stack_a, temp);
 	}
