@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 03:28:47 by eryudi-m          #+#    #+#             */
-/*   Updated: 2023/03/19 01:35:52 by codespace        ###   ########.fr       */
+/*   Updated: 2023/03/19 02:53:45 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ t_node	*ft_lstremove_start(t_node **lst)
 	t_node *temp;
 
 	temp = *lst;
-	if (*lst)
+	if ((*lst)->next)
 	{
 		*lst = (*lst)->next;
 		if (*lst)
 			(*lst)->prev = NULL;
 	}
 	temp->next = NULL;
+	temp->prev = NULL;
 	return (temp);
 }
 
